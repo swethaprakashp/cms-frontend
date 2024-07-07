@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter , Route, Routes, useHistory } from 'react-router-dom';
+import { BrowserRouter , Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/home'
 import Dashboard from './pages/dashboard';
 const App = () => {
   function RedirectHandler() {
-    const history = useHistory();
+    const navigate = useNavigate();
   
     useEffect(() => {
       const redirectPath = sessionStorage.getItem('redirect');
       sessionStorage.removeItem('redirect');
       if (redirectPath) {
-        history.replace(redirectPath);
+        navigate(redirectPath, { replace: true });
       }
-    }, [history]);
+    }, [navigate]);
   
     return null;
   }
