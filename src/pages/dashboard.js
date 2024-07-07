@@ -17,8 +17,6 @@ const Dashboard = () => {
     const [customerData, setCustomerData] = useState(null);
     const [updatePopup, setUpdatePopup] = useState(false);
 
-
-  console.log(checked)
     const getAllCustomerData = async () => {
         try {
             const response = await getAllCustomers();
