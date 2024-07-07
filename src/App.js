@@ -4,10 +4,10 @@ import Home from './pages/home'
 import Dashboard from './pages/dashboard';
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/cms-frontend">
       <Routes>
-        <Route exact path="cms-frontend" element={<Home />} />
-        <Route path="dashboard" element={<Dashboard />} />
+      <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   )
